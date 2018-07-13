@@ -7,6 +7,8 @@ A simple GUI is provided that can either run on a per file basis or loop over ma
 Prerequisities required 
 
 ```python 
-pandas, scikit-image, pydicom, gooey '''
-
+pandas, scikit-image, pydicom, gooey
+```
 Works for Python 2 and 3, buildspec for a Windows exe is provided.
+
+![example]http://raw.githubusercontent.com/gordon-n-stevenson/dopplertext/master/example.png "Example of DopplerText
