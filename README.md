@@ -11,4 +11,4 @@ pandas, scikit-image, pydicom, gooey
 ```
 Works for Python 2 and 3, buildspec for a Windows exe is provided.
 
-![example](http://raw.githubusercontent.com/gordon-n-stevenson/dopplertext/master/example.png "Example of DopplerText")
+![example](http://raw.githubusercontent.com/gordon-n-stevenson/dopplertext/master/example.png)
