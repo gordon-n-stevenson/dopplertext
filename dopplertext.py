@@ -73,7 +73,11 @@ def loadImgDict():
     return image_dictionary
 
 def runFile(args):
-    #run depending on if inputfile or inputdir
+    """
+
+    :param args: dictionary
+    :return:
+    """
     inputfile = args.inputfile
     inputdir = args.inputdir
 
@@ -117,16 +121,21 @@ def runFile(args):
 def save_df(write_df, outputfile):
     """
     save out a dataframe write_df to a file with path outputfile depending on if excel or csv based on suffix
+
+    :param write_df dataframe
+    :param outputfile path to the dataframe to write to
     """
     print('Saving File....')
     if outputfile.split('.')[1] == 'csv':
         write_df.to_csv(outputfile)
 
-    if outputfile.split('.')[1] == 'xls' or outputfile.split('.')[1] == 'xlsx':
+    elif outputfile.split('.')[1] == 'xls' or outputfile.split('.')[1] == 'xlsx':
         writer = pd.ExcelWriter(outputfile)
         write_df.to_excel(writer,'Result')
         writer.save()
-
+    else:
+        print('csv or excel needs to be selected!')
+        raise NotImplementedError
     write_df.to_clipboard()
     print('...done!')
 
@@ -148,6 +157,15 @@ def getTextFromDCMFile(file_name, image_dictionary):
     """
     returns a List for Dataframe and the ordering in row order of which statistics are
     provided
+
+    using x-corr against an image_dictionary, text is extracted from the particular image and then reordered and
+    returned as a DataFrame which can then saved as a spreadsheet
+
+    :param file_name
+    :param image_dictionary - a dict indexed by the characters within the np.array that contains the particular text.
+
+    :return output_df
+    :return y_list
     """
 
     file_name = file_name.replace('\\', '/')
@@ -206,6 +224,8 @@ def getText(out_txt):
     """
     given a list of strings found in a doppler image line, return a complete string with spacing
     formed correctly for gaps between numbers, words, hyphens and periods.
+    :param out_txt: list of strings
+    :return final_o: ordered list of strings
     """
     final_o = ''
     for o in out_txt:
@@ -223,12 +243,22 @@ def getText(out_txt):
     return final_o
 
 def isNumber(i):
+    """
+    :param i: string
+    :return: boolean whether string is a digit between 0 and 10.
+    """
     if i in [str(n) for n in np.arange(0,10)]:
         return True
     else:
         return False
 
 def distanceFromNum(i,txt,x_pos):
+    """
+    :param i:
+    :param txt:
+    :param x_pos:
+    :return:
+    """
     if not isNumber(i):
         return False
 
@@ -244,11 +274,12 @@ def distanceFromNum(i,txt,x_pos):
 
 if __name__ == '__main__':
 
-    nonbuffered_stdout = os.fdopen(sys.stdout.fileno(), 'w', 0)
-    sys.stdout = nonbuffered_stdout
     main()
 
-    """class argsobj(object):
+
+    """
+    dummy test to run without gooey frontend - pases the argsobj dict.
+    class argsobj(object):
         def __init__(self):
             self.inputfile = None
             #self.inputfile = "C:\\Users\\gordo\\Google Drive\\GitHub\\DopplerText\\data\\IMG_20180516_1_3.dcm"
