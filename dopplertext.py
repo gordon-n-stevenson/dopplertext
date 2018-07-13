@@ -68,8 +68,12 @@ def loadImgDict():
     if not os.path.isfile('image_dictionary.pickle'):
         raise NotImplementedError
 
-    with open('image_dictionary.pickle', 'rb') as handle:
-        image_dictionary = pickle.load(handle,)
+    try:
+        with open('image_dictionary.pickle', 'rb') as handle:
+            image_dictionary = pickle.load(handle)
+    except UnicodeDecodeError as e:
+        with open('image_dictionary.pickle', 'rb') as f:
+            image_dictionary = pickle.load(f, encoding='latin1')
     return image_dictionary
 
 def runFile(args):
