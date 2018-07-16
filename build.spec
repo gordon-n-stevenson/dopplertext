@@ -6,7 +6,7 @@ gooey_root = os.path.dirname(gooey.__file__)
 gooey_languages = Tree(os.path.join(gooey_root, 'languages'), prefix = 'gooey/languages')
 gooey_images = Tree(os.path.join(gooey_root, 'images'), prefix = 'gooey/images')
 a = Analysis(['DopplerText.py'],
-             pathex=['C:\\Python27','C:\\Python27\\Lib\\site-packages\\scipy\\extra-dll'],
+             pathex=['C:\\ProgramData\\Miniconda3','C:\\ProgramData\\Miniconda3\\Lib\\site-packages\\scipy\\extra-dll'],
              hiddenimports=['scipy._lib.messagestream','pywt._extensions._cwt','pandas._libs.tslibs','pandas._libs.tslibs.timedeltas', 'pandas._libs.tslibs.np_datetime', 'pandas._libs.tslibs.nattype', 'pandas._libs.skiplist'],
              hookspath=None,
              runtime_hooks=None,

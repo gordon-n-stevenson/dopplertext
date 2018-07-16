@@ -130,15 +130,15 @@ def save_df(write_df, outputfile):
     :param outputfile path to the dataframe to write to
     """
     print('Saving File....')
-    if outputfile.split('.')[1] == 'csv':
+    if outputfile.split('.')[-1] == 'csv':
         write_df.to_csv(outputfile)
 
-    elif outputfile.split('.')[1] == 'xls' or outputfile.split('.')[1] == 'xlsx':
+    elif outputfile.split('.')[-1] == 'xls' or outputfile.split('.')[-1] == 'xlsx':
         writer = pd.ExcelWriter(outputfile)
         write_df.to_excel(writer,'Result')
         writer.save()
     else:
-        print('csv or excel needs to be selected!')
+        print('csv or excel needs to be selected for file {}!'.format(outputfile))
         raise NotImplementedError
     write_df.to_clipboard()
     print('...done!')
