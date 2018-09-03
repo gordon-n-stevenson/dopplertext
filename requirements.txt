@@ -1,0 +1,7 @@
+scikit_image==0.14.0
+pandas==0.23.4
+numpy==1.14.3
+dicom==0.9.9.post1
+gooey==1.0.1
+pydicom==1.1.0
+skimage==0.0
