@@ -9,6 +9,6 @@ Prerequisities required
 ```python 
 pandas, scikit-image, pydicom, gooey
 ```
-Works for Python 2 and 3, buildspec for a Windows exe is provided.
+Works for Python 2 and 3, buildspec for a Windows exe is provided. (https://drive.google.com/open?id=1fhiZqZwlsw_bLjfh2P4cv3dZj03q5koP)
 
 ![example](https://raw.githubusercontent.com/gordon-n-stevenson/dopplertext/master/example.png)
