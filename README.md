@@ -1,4 +1,7 @@
 # DopplerText
+[![DOI](https://zenodo.org/badge/140705445.svg)](https://zenodo.org/badge/latestdoi/140705445)
+
+
 
 A program to identify and read into a spreadsheet Doppler parameters that are "burned into" a DCM file output from a GE Voluson E8 system.
 
